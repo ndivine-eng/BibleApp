@@ -7,7 +7,13 @@ import Stories from './Stories';
 import Todayscreen from './Todayscreen';
 import { Ionicons,MaterialIcons,AntDesign} from 'react-native-vector-icons'
 
+
 const Tab = createBottomTabNavigator();
+
+
+
+
+
 
 
 export default function BottombarNav() {
@@ -39,6 +45,7 @@ export default function BottombarNav() {
         component={Stories}
         options={{
           tabBarLabel: 'Stories',
+          headerShown:false,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="sound" size={20} color={color} /> 
           ),
@@ -49,6 +56,7 @@ export default function BottombarNav() {
         component={Profile}
         options={{
           tabBarLabel: 'profile',
+          headerShown:false,
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="person-outline" size={20} color={color} /> 
           ),
