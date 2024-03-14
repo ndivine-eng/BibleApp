@@ -10,7 +10,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import Login from "./Screen/Login";
 import ThemeProvider from "./Context/Themeprovider";
-import Today from "./Screen/Today";
+import Todayscreen from "./Screen/Todayscreen";
 import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
@@ -22,11 +22,11 @@ export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Stories' >
+      <Stack.Navigator initialRouteName='bottomVav' >
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Today" component={Today}/>
+        <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
       </Stack.Navigator>
     </NavigationContainer>

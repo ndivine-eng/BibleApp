@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { View, Text,  } from 'react-native'
 
-export default function Todayscreen() {
+export default function Todays() {
   return (
     <View>
-      <Text>Todayscreen</Text>
+
+      <View style={{justifyContent:'center',}}>
+        <Text style={{fontSize:25, fontStyle:'italic'}}>But when you give to the needy, do not let your left hand know what your right hand is doing</Text>
+      </View>
+      
     </View>
   )
 }
-
-const styles = StyleSheet.create({})
