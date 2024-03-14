@@ -15,7 +15,7 @@ export default function Profile() {
       <View style={{flexDirection: 'row', justifyContent:'space-between', marginHorizontal:10}}>
         <EvilIcons name="navicon" size={25} color={'black'}/>
         <Text style={{fontSize: 20}}> My Profile</Text>
-        <TouchableOpacity onPress={()=> navigation.navigate('Settings')}>
+        <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
           <Text style={{fontSize: 15, color: 'orange'}}> Sign Up</Text>
         </TouchableOpacity>
       </View>

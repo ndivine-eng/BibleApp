@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Highlights(navigation) {
   return (
-    <View style={{flex: 1,   justifyContent: 'center',}}>
-    <View style={{flex:1, alignItems:'center'}}>
+    <View style={{  justifyContent: 'center',}}>
+    <View style={{ alignItems:'center'}}>
       <Text>MAKE THE BIBLE YOURS</Text>
       <Text>Tab on a verse in the Bible to highlight.</Text>
     </View>
