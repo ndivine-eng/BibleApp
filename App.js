@@ -16,7 +16,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
 import Todayscreen from './Screen/Todayscreen';
 import Login from './login';
+import Signin from './signin';
 import Register from './register';
+import Help from './help';
+import ForgotPasswordScreen from './forgotpassword';
+import Search from './search';
+import Bible from './Screen/Bible';
 
 
 
@@ -33,6 +38,11 @@ export default function App() {
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
         <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name='Signin' component={Signin}/>
+        <Stack.Screen name='Help' component={Help}/>
+        <Stack.Screen name='Forgot' component={ForgotPasswordScreen}/>
+        <Stack.Screen name='Search' component={Search}/>
+        <Stack.Screen name='Bible' component={Bible}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>

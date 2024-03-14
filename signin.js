@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 const width = Dimensions.get('screen').width
 const height = Dimensions.get('screen').height
 
-const Login = ({ navigation }) => {
+const Signin = ({ navigation }) => {
  const userExist = AsyncStorage.getItem('user_data')
    const [email, setEmail] =
       useState("")
@@ -163,4 +163,4 @@ const Login = ({ navigation }) => {
       </View>
    )
 };
-export default Login;
+export default Signin;

@@ -8,15 +8,20 @@ const height=Dimensions.get('screen').height
 
 
 export default function Profile(navigation) {
+
+  const handleOpenDrawer = () => {
+    navigation.openDrawer();
+  };
   return (
     
     <View>
       <View style={{height:50}}></View>
       <View style={{flexDirection: 'row', justifyContent:'space-between',marginHorizontal:10}}>
-        
+        <Pressable onPress={handleOpenDrawer}>
         <EvilIcons name="navicon" size={25} color={'black'}/>
+        </Pressable>
         <Text style={{fontSize: 20}}> My Profile</Text>
-        <Pressable  onPress={() => navigation.navigate('Register')}>
+        <Pressable  onPress={() => navigation.navigate('')}>
         <Text style={{fontSize: 15, color: 'orange'}}> Sign Up</Text>
         </Pressable>
         

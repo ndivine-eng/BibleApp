@@ -8,6 +8,7 @@ import Todayscreen from './Todayscreen';
 import { Ionicons,MaterialIcons,AntDesign} from 'react-native-vector-icons'
 
 
+
 const Tab = createBottomTabNavigator();
 
 
@@ -53,7 +54,7 @@ export default function BottombarNav() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={DrawerNavigator}
         options={{
           tabBarLabel: 'profile',
           headerShown:false,
