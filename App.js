@@ -15,6 +15,9 @@ import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
 import Todayscreen from './Screen/Todayscreen';
+import Login from './login';
+import Register from './register';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +32,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
+        <Stack.Screen name="Register" component={Register}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
