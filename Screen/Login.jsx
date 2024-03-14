@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text,StyleSheet } from 'react-native';
+import { View, Text,StyleSheet,Image,TouchableOpacity } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
 
 export default function Login() {
