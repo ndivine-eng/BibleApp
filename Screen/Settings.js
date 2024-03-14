@@ -3,7 +3,7 @@ import React , { useState} from 'react'
 import { Entypo ,MaterialIcons,AntDesign} from 'react-native-vector-icons'
 
 
-const Settings = () => {
+const Settings = (navigation) => {
 
     const [darkMode, setDarkMode] = useState(false);
     const [notifications, setNotifications] = useState(false);
