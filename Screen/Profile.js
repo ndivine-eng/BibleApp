@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { EvilIcons ,MaterialIcons,AntDesign} from 'react-native-vector-icons'
@@ -16,7 +16,10 @@ export default function Profile(navigation) {
         
         <EvilIcons name="navicon" size={25} color={'black'}/>
         <Text style={{fontSize: 20}}> My Profile</Text>
+        <Pressable  onPress={() => navigation.navigate('Register')}>
         <Text style={{fontSize: 15, color: 'orange'}}> Sign Up</Text>
+        </Pressable>
+        
       </View>
       <View style={{flexDirection:'row', gap:10, marginTop:20, border:'2 solid', borderColor:'black',marginHorizontal:12}}>
         <TouchableOpacity>
