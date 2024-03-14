@@ -22,11 +22,12 @@ export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Stories' >
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Today" component={Today}/>
+        <Stack.Screen name="Stories" component={Stories}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
