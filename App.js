@@ -1,11 +1,13 @@
+
 import BottombarNav from './Screen/BottombarNav';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './Screen/Profile';
 import About from './Screen/About';
+import 'react-native-gesture-handler';
 import Settings from './Screen/Settings';
-import React from "react";
-import Login from "./Screen/Login";
+import Stories from './Screen/Stories';
+import Login from './Screen/Login';
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import Stories from "./Screen/Stories";
@@ -17,17 +19,11 @@ import { GestureHandlerRootView} from 'react-native-gesture-handler';
 import Highlights from './Screen/Highlight';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const Stack = createNativeStackNavigator();
-const TabBar = createMaterialTopTabNavigator();
 
-function TopNav() {
-  return (
-    <TabBar.Navigator>
-      <TabBar.Screen name="Profile" component={Highlights} />
-      <TabBar.Screen name="About" component={About} />
-    </TabBar.Navigator>
-  );
-}
+const Stack = createNativeStackNavigator();
+
+
+
 
 export default function App() {
   return (
@@ -36,15 +32,19 @@ export default function App() {
       <Stack.Navigator initialRouteName='bottomVav' >
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="Settings" component={Settings}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
         <Stack.Screen name="Today" component={Today}/>
         <Stack.Screen name="TopNav" component={TopNav} options={{ headerShown: false }} />
         <Stack.Screen name="Settings" component={Settings} />
+
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
+    // <Settings/>
    
   );
 }
+

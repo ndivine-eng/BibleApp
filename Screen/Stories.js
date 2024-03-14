@@ -2,8 +2,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Entypo ,MaterialIcons,AntDesign, Feather} from 'react-native-vector-icons'
 
+import React, {useEffect, useState} from "react";
+import { View, Text, Button } from "react-native";
+
+
 export default function Stories() {
   return (
+
     <View
       style={{
         justifyContent: "center",
@@ -19,6 +24,9 @@ export default function Stories() {
       <Text style={{fontSize:20,fontWeight:'bold'}}>New Testament</Text>
       <AntDesign name="arrowright" size={20} color={'black'} style={{marginTop:4}}/>
       </View>
+
     </View>
-  )
+  );
 }
+
+// const styles = StyleSheet.create({})
