@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
-export default function Login() {
-  return (
-    <View>
-      <Text>Login</Text>
-    </View>
-  )
-}
-
-const styles = StyleSheet.create({})
-=======
 import React, { useContext } from 'react';
-import { Text, View, Image, TouchableOpacity,StyleSheet } from 'react-native';
+import { View, Text,StyleSheet } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
 
 export default function Login() {
@@ -125,4 +111,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
->>>>>>> 57a457d (ok)
