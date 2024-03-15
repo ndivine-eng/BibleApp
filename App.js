@@ -20,6 +20,7 @@ import Highlights from './Screen/Highlight';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
+
 const Stack = createNativeStackNavigator();
 
 
@@ -40,6 +41,9 @@ export default function App() {
         <Stack.Screen name="TopNav" component={TopNav} options={{ headerShown: false }} />
         <Stack.Screen name="Settings" component={Settings} />
 
+        {/* <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="Signin" component={Signin}/>
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown:false}}/> */}
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
