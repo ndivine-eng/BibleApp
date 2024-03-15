@@ -1,12 +1,22 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
+import React from 'react'
+import { View,Text, } from 'react-native';
 
-export default function StoryCard ({pictures, text }) {
-    return (
-        <View >
-            <Image source={{ uri: `https://image.tmdb.org/t/p/w500${pictures}` }} style={{width:300, height:200, borderRadius:10, marginTop:10, marginLeft:10}} />
-            <Text>{text}</Text>
-            
-        </View>
-    )
+function StoryCards({tittle,icon,comment}) {
+  return (
+    <View style={{width:300, height:200,backgroundColor:'#344966',  justifyContent:'center', gap:10, marginBottom:10, borderRadius:10, marginLeft:20,}}>
+      <View style={{display:'flex', flexDirection:'row',marginLeft:20,}}>
+        <Text>{icon}</Text>
+        <Text>{tittle}</Text>
+      </View>
+      <View style={{borderRadius:10,justifyContent:'center',padding:'10',borderColor:'#f6bd60',marginLeft:20}}> 
+        <Text style={{color:'#f6bd60'}}>{comment}</Text>
+      </View>
+      
+
+
+      
+    </View>
+  )
 }
+
+export default StoryCards
