@@ -31,7 +31,11 @@ export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
+<<<<<<< HEAD
       <Stack.Navigator initialRouteName='bottomVav' >
+=======
+      <Stack.Navigator initialRouteName='Register'>
+>>>>>>> 836f8bd (pius)
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Login" component={Login}/>
