@@ -10,6 +10,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import Login from "./Screen/Login";
 import ThemeProvider from "./Context/Themeprovider";
+import Todayscreen from "./Screen/Todayscreen";
 import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'

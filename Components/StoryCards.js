@@ -1,4 +1,11 @@
 import React from 'react'
+
+import { View } from 'react-native-reanimated/lib/typescript/Animated'
+
+function StoryCards({tittle,}) {
+  return (
+    <View>
+
 import { View,Text, } from 'react-native';
 
 function StoryCards({tittle,icon,comment}) {
@@ -12,8 +19,6 @@ function StoryCards({tittle,icon,comment}) {
         <Text style={{color:'#f6bd60'}}>{comment}</Text>
       </View>
       
-
-
       
     </View>
   )

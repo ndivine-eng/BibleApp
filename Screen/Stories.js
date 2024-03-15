@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { Entypo ,MaterialIcons,AntDesign, Feather} from 'react-native-vector-icons'
 
 export default function Stories() {
   return (
@@ -14,7 +15,10 @@ export default function Stories() {
         <Text style={{ fontSize: 38,fontStyle:'italic'  }}> Bible Audio stories</Text>
         <Text styles={{borderRadius: 10, padding:10,color: '#fff'}} >mode</Text>
       </View>
-
+      <View style={{display:'flex',flexDirection:'row', gap:30 }}>
+      <Text style={{fontSize:20,fontWeight:'bold'}}>New Testament</Text>
+      <AntDesign name="arrowright" size={20} color={'black'} style={{marginTop:4}}/>
+      </View>
     </View>
   )
 }
