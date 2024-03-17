@@ -11,10 +11,8 @@ import DrawerNavigator from '../navigation/drawer';
 
 
 
+
 const Tab = createBottomTabNavigator();
-
-
-
 
 
 
@@ -31,6 +29,8 @@ export default function BottombarNav() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="moon-outline" size={20} color={color} /> 
           ),
+
+          tabBarActiveTintColor:"orange"
         }}
       />
       <Tab.Screen
@@ -39,8 +39,10 @@ export default function BottombarNav() {
         options={{
           tabBarLabel: 'Bible',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="book-outline" size={20} color={'orange'} /> 
+            <Ionicons name="book-outline" size={20} color={color} /> 
           ),
+
+          tabBarActiveTintColor:"orange"
         }}
       />
       <Tab.Screen
@@ -51,7 +53,10 @@ export default function BottombarNav() {
           headerShown:false,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="sound" size={20} color={color} /> 
+
           ),
+
+          tabBarActiveTintColor:"orange"
         }}
       />
       <Tab.Screen
@@ -63,6 +68,7 @@ export default function BottombarNav() {
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="person-outline" size={20} color={color} /> 
           ),
+          tabBarActiveTintColor:"orange"
         }}
       />
     </Tab.Navigator>

@@ -1,6 +1,6 @@
 
 import BottombarNav from './Screen/BottombarNav';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './Screen/Profile';
 import About from './Screen/About';
@@ -27,6 +27,9 @@ import Bible from './Screen/Bible';
 
 const Stack = createNativeStackNavigator();
 
+
+
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -36,6 +39,7 @@ export default function App() {
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Login}/>
+
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
         <Stack.Screen name="Register" component={Register}/>
@@ -48,6 +52,8 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
+    // <Settings/>
    
   );
 }
+
