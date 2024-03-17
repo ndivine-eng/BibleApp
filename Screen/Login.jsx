@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { View, Text,StyleSheet , Image, TouchableOpacity} from 'react-native';
 import { View, Text,StyleSheet,Image,TouchableOpacity } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
 
@@ -52,7 +53,7 @@ export default function Login() {
 // styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,

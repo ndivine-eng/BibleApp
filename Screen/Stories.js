@@ -1,9 +1,15 @@
+import React, {useEffect, useState} from "react";
+import { View, Text, Button } from "react-native";
+
+export default function Stories() {
+  return (
 import { View, Text } from 'react-native';
 import React from 'react';
 import { AntDesign } from 'react-native-vector-icons';
 
 export default function Stories() {
   return (
+
     <View
       style={{
         justifyContent: "center",
@@ -12,6 +18,15 @@ export default function Stories() {
       }}
     >
       <View style={{ alignContent: "center", display:"flex", flexDirection:"row" }}>
+        <Text style={{ fontSize: 38,fontStyle:'italic'  }}> Bible Audio stories</Text>
+        <Text styles={{borderRadius: 10, padding:10,color: '#fff'}} >mode</Text>
+      </View>
+
+    </View>
+  );
+}
+
+// const styles = StyleSheet.create({})
         <Text style={{ fontSize: 38, fontStyle:'italic' }}> Bible Audio stories</Text>
         <Text style={{ borderRadius: 10, padding:10, color: '#fff' }}>mode</Text> 
       </View>

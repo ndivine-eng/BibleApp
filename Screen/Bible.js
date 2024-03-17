@@ -1,3 +1,48 @@
+
+import { StyleSheet, Text, View , TouchableOpacity, ScrollView} from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { Entypo ,MaterialIcons,AntDesign, Feather} from 'react-native-vector-icons'
+// import { TouchableOpacity } from 'react-native-gesture-handler'
+
+export default function Bible() {
+
+
+  const [bibleVerse, setBibleVerse] = useState([]);
+
+  // const handleFetch = ()=>{
+  //   axios({
+  //     method:get,
+  //     URL:'https://api.scripture.api.bible/?api-key=0d6e81c842b445794fe47decbb0d8524​/v1​/audio-bibles',
+
+  //   }).then((Response)=>{
+  //     console.log(Response.data);
+  //     setBibleVerse(Response.data);
+  //   }).catch((error)=>{
+  //     console.log(error)
+  //   })
+  // }
+
+  // useEffect(() => {
+  //   handleFetch();
+  // }, []);
+
+  const fetchBibleVerse = async () => {
+    try {
+      const response = await fetch('https://api.scripture.api.bible/?api-key=0d6e81c842b445794fe47decbb0d8524​/v1​/audio-bibles');
+      const data = await response.json();
+      setBibleVerse(data.apis[0].properties);
+      console.log(data.apis[0].properties)
+    } catch (error) {
+      console.log('Error fetching Bible verse:', error);
+    }
+  };
+  
+  useEffect(()=>{
+    fetchBibleVerse();
+  },[])
+  return (
+    <ScrollView>
+      <View style={{flexDirection:'row', justifyContent:'flex-end', gap:30}}>
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, FlatList } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Entypo, MaterialIcons, AntDesign, Feather } from 'react-native-vector-icons';
@@ -22,9 +67,33 @@ export default function Bible() {
     <ScrollView>
       <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 30 }}>
         <TouchableOpacity>
+
+        <AntDesign name="sound" size={20} color={'black'} style={{marginTop:4}}/>
+
           <AntDesign name="sound" size={20} color={'black'} style={{ marginTop: 4 }} />
         </TouchableOpacity>
         <TouchableOpacity>
+        <AntDesign name="search1" size={20} color={'black'} style={{marginTop:4}}/>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={{flexDirection:'row', backgroundColor:'grey', padding:7, borderRadius:17, width:'18%', }} >
+          <Feather name="globe" size={15} color={'black'} style={{marginTop:4}}/>
+          <Text style={{fontSize:15, marginLeft:7}}>NIV</Text>
+        </TouchableOpacity>
+      </View>
+      <Text>{bibleVerse.map((items,index)=>{
+        <View>
+          <Text>{items.type}</Text>
+        </View>
+      })}</Text>
+      <View style={{height:620, }}></View>
+      <View style={{marginBottom:10}}>
+        <Entypo name="controller-play" size={20} color={'black'} style={{marginTop:4, marginLeft:380, backgroundColor:'white', borderRadius:100, padding:7, width:'10%'}} />
+      </View>
+      {/* <Text>Bible</Text> */}
+    </ScrollView>
+  )
+
           <AntDesign name="search1" size={20} color={'black'} style={{ marginTop: 4 }} />
         </TouchableOpacity>
         <TouchableOpacity style={{ flexDirection: 'row', backgroundColor: 'grey', padding: 7, borderRadius: 17, width: '18%' }}>
