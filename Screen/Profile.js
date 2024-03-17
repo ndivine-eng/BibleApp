@@ -3,45 +3,27 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'; 
 import { EvilIcons ,MaterialIcons,AntDesign} from 'react-native-vector-icons'
 import { StatusBar } from 'expo-status-bar'
-import { EvilIcons, MaterialIcons, AntDesign } from 'react-native-vector-icons';
+
 
 const width = Dimensions.get('screen').width
 const height = Dimensions.get('screen').height
-const width = Dimensions.get('screen').width
-const height = Dimensions.get('screen').height
-
-export default function Profile() {
-  const navigation = useNavigation(); 
-
+ 
 export default function Profile({ navigation }) {
 
-  // const handleOpenDrawer = () => {
-  //   navigation.openDrawer();
-  // };
+  const handleOpenDrawer = () => {
+    navigation.openDrawer();
+  };
   return (
 
     <View>
       <View style={{height:50}}></View>
       <View style={{flexDirection: 'row', justifyContent:'space-between', marginHorizontal:10}}>
-        <EvilIcons name="navicon" size={25} color={'black'}/>
+        <EvilIcons name="navicon" size={25} color={'black'} onPress={()=>navigation.openDrawer()}/>
         <Text style={{fontSize: 20}}> My Profile</Text>
         <TouchableOpacity onPress={()=> navigation.navigate('Login')}>
           <Text style={{fontSize: 15, color: 'orange'}}> Sign Up</Text>
         </TouchableOpacity>
-      <View style={{ height: 50 }}></View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 10 }}>
-        <Pressable >
-          <EvilIcons name="navicon" size={25} color={'black'} onPress={()=>navigation.openDrawer()} />
-        </Pressable>
-        <Text style={{ fontSize: 20 }}> My Profile</Text>
-        <Pressable onPress={() => navigation.navigate('')}>
-          {/* <Text style={{ fontSize: 15, color: 'orange' }}> Sign Up</Text> */}
-        </Pressable>
-
       </View>
-      <View style={{flexDirection:'row', gap:10, marginTop:20, border:'2 solid', borderColor:'black', marginHorizontal:12}}>
-        <TouchableOpacity onPress={()=> navigation.navigate('Highlights')}>
-          <Text style={{borderRadius:20,borderColor:"orange", borderWidth:2, color:'orange', padding:7}}> Highlights</Text>
       <View style={{ flexDirection: 'row', gap: 10, marginTop: 20, border: '2 solid', borderColor: 'black', marginHorizontal: 12 }}>
         <TouchableOpacity>
           <Text style={{ borderRadius: 20, borderColor: "orange", borderWidth: 2, color: 'orange', padding: 7 }}> Highlights</Text>
