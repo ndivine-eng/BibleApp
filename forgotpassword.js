@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Alert } from 'react-native';
-import { Firebase_auth } from "./firebase";
+import { auth,sendPasswordResetEmail } from "./firebase"; // Assuming auth is the authentication object from your firebase module
 
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState('');
-  const auth=Firebase_auth
 
   const handleResetPassword = () => {
     if (!email) {
@@ -12,10 +11,9 @@ const ForgotPasswordScreen = () => {
       return;
     }
 
-    auth .sendPasswordResetEmail(email)
+    auth.sendPasswordResetEmail(email)
       .then(() => {
         Alert.alert('Password reset email sent successfully');
-    
       })
       .catch((error) => {
         Alert.alert('Error sending password reset email', error.message);

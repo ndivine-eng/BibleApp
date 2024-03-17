@@ -4,20 +4,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput, Button } from 'react-native-paper';
  import AsyncStorage from "@react-native-async-storage/async-storage";
-import { getAnalytics,signInWithEmailAndPassword } from "firebase/analytics";
  import { Firebase_analytics } from "./firebase";
 import FlashMessage, { showMessage } from "react-native-flash-message";
 import { useNavigation } from "@react-navigation/native";
+import { signInWithEmailAndPassword,getAuth } from "firebase/auth"; // Update import
+
 
 
 const width = Dimensions.get('screen').width
 const height = Dimensions.get('screen').height
-
+const auth = Firebase_analytics;
 const Signin = ({ navigation }) => {
  const userExist = AsyncStorage.getItem('user_data')
    const [email, setEmail] =
       useState("")
-   const [Password, setPassword] =
+   const [password, setPassword] =
       useState("")
    const [emailError, setEmailError] =
       useState("")
@@ -32,9 +33,10 @@ const Signin = ({ navigation }) => {
 
    // const navigate = useNavigation()
 
-      const analytics=Firebase_analytics
+      const auth = Firebase_analytics
 
-    console.log(userExist)
+    console.log(userExist);
+    
    const ValidateForm = () => {
       let Valid = true
       //Validate email
@@ -48,7 +50,7 @@ const Signin = ({ navigation }) => {
          setEmailError('')
       }
       //validate password
-      if (Password.trim() === '') {
+      if (password.trim() === '') {
          setPasswordError('password is required')
          Valid = false
       } else {
@@ -62,11 +64,11 @@ const Signin = ({ navigation }) => {
       if (ValidateForm()) {
          //Perform form submission 
          console.log('Form submitted:',
-            email, Password)
+            email, password)
       
 
           try {
-             const response = await signInWithEmailAndPassword(analytics, email, Password)
+             const response = await signInWithEmailAndPassword(getAuth(), email, password)
              console.log(response)
              console.log('your now signed in')
              showMessage({
@@ -135,7 +137,7 @@ const Signin = ({ navigation }) => {
                   label="Password"
                   mode='offline'
                   secureTextEntry={!showPassword}
-                  value={Password}
+                  value={password}
                   onChangeText={setPassword}
                   error={passWordError}
                   style={{ backgroundColor: 'black', marginHorizontal: 20, }} />
@@ -149,7 +151,7 @@ const Signin = ({ navigation }) => {
                <Text style={{ backgroundColor: 'gray', textAlign: 'center', marginHorizontal: 20, paddingTop: 10, paddingBottom: 10 }}>Sign In</Text>
             </Pressable>
             <View style={{ height: 40 }}></View>
-            <Pressable onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+            <Pressable onPress={() => navigation.navigate('forgot')}>
                <Text style={{ color: 'pink', textAlign: 'center', marginHorizontal: 20, fontSize: 18 }}>Forgot Password?</Text>
             </Pressable>
             <View style={{ height: 350, alignContent: 'center' }}></View>

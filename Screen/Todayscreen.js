@@ -1,19 +1,7 @@
-
-import React from 'react'
-import { View, Text,  } from 'react-native'
-
-export default function Todays() {
-  return (
-    <View>
-
-      <View style={{justifyContent:'center',}}>
-        <Text style={{fontSize:25, fontStyle:'italic'}}>But when you give to the needy, do not let your left hand know what your right hand is doing</Text>
-      </View>
-
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity,ScrollView  } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
-import StoryCards from '../components/StoryCards';
+import StoryCards from '../Components/StoryCards';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 

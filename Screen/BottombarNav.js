@@ -6,6 +6,8 @@ import Profile from './Profile';
 import Stories from './Stories';
 import Todayscreen from './Todayscreen';
 import { Ionicons,MaterialIcons,AntDesign} from 'react-native-vector-icons'
+import DrawerNavigator from '../navigation/drawer';
+
 
 
 
@@ -54,10 +56,10 @@ export default function BottombarNav() {
       />
       <Tab.Screen
         name="Profile"
-        component={DrawerNavigator}
+        component={DrawerNavigator }
         options={{
           tabBarLabel: 'profile',
-          headerShown:false,
+          // headerShown:false,
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="person-outline" size={20} color={color} /> 
           ),

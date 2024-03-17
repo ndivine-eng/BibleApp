@@ -1,12 +1,6 @@
 import React from 'react'
 
-import { View } from 'react-native-reanimated/lib/typescript/Animated'
-
-function StoryCards({tittle,}) {
-  return (
-    <View>
-
-import { View,Text, } from 'react-native';
+import { View,Text} from 'react-native'
 
 function StoryCards({tittle,icon,comment}) {
   return (

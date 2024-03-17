@@ -8,14 +8,12 @@ import 'react-native-gesture-handler';
 import Settings from './Screen/Settings';
 import React from "react";
 import { View, Text } from "react-native";
-import Login from "./Screen/Login";
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
-import Todayscreen from './Screen/Todayscreen';
-import Login from './login';
+import Login from './Screen/Login';
 import Signin from './signin';
 import Register from './register';
 import Help from './help';
@@ -25,28 +23,28 @@ import Bible from './Screen/Bible';
 
 
 
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
-<<<<<<< HEAD
-      <Stack.Navigator initialRouteName='bottomVav' >
-=======
-      <Stack.Navigator initialRouteName='Register'>
->>>>>>> 836f8bd (pius)
+      <Stack.Navigator initialRouteName='bo' >
+    
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
-        <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name='Signin' component={Signin}/>
         <Stack.Screen name='Help' component={Help}/>
-        <Stack.Screen name='Forgot' component={ForgotPasswordScreen}/>
         <Stack.Screen name='Search' component={Search}/>
         <Stack.Screen name='Bible' component={Bible}/>
+        <Stack.Screen name='botom' component={BottombarNav}/>
+        <Stack.Screen name='forgot' component={ForgotPasswordScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>

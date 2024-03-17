@@ -1,103 +1,91 @@
-import react, { useState, useContext } from "react";
+import React, { useState } from "react"; // Update import
 import { ImageBackground, SafeAreaView, View, Text, Pressable, Dimensions, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput, Button } from 'react-native-paper';
 import FlashMessage, { showMessage } from "react-native-flash-message";
-import { useNavigation } from "@react-navigation/native";
-import { getAnalytics, createUserWithEmailAndPassword } from "firebase/analytics";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth"; // Update import
+
+// Assuming Firebase_analytics is correctly defined in "./firebase"
 import { Firebase_analytics } from "./firebase";
+import Signin from "./signin";
 
+const width = Dimensions.get('screen').width;
+const height = Dimensions.get('screen').height;
 
-
-const width = Dimensions.get('screen').width
-const height = Dimensions.get('screen').height
-
-const Register= ({ navigation }) => {
+const Register = ({ navigation }) => {
    
-   const [email, setEmail] =
-      useState("")
-   const [Password, setPassword] =
-      useState("")
-   const [emailError, setEmailError] =
-      useState("")
-   const [passWordError, setPasswordError] =
-      useState("")
-   const [isLoading, setIsLoading] = useState(false)
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState(""); // Update variable name
+   const [emailError, setEmailError] = useState("");
+   const [passWordError, setPasswordError] = useState("");
+   const [isLoading, setIsLoading] = useState(false);
    const [showPassword, setShowPassword] = useState(false);
    const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
    };
 
-   const analytics=Firebase_analytics
+   const analytics = Firebase_analytics;
    
    const ValidateForm = () => {
-      let Valid = true
+      let Valid = true;
       //Validate email
       if (!email.trim()) {
-         setEmailError('Email is required')
-         Valid = false
+         setEmailError('Email is required');
+         Valid = false;
       } else if (!isValidEmail(email)) {
-         setEmailError('Invalid email format')
-         Valid = false
+         setEmailError('Invalid email format');
+         Valid = false;
       } else {
-         setEmailError('')
+         setEmailError('');
       }
       //validate password
-      if (Password.trim() === '') {
-         setPasswordError('password is required')
-         Valid = false
+      if (password.trim() === '') { // Update variable name
+         setPasswordError('password is required');
+         Valid = false;
       } else {
-         setPasswordError('')
+         setPasswordError('');
       }
-      return Valid
-   }
-
+      return Valid;
+   };
 
    const handleSubmit = async () => {
       if (ValidateForm()) {
          //Perform form submission 
-         console.log('Form submitted:',
-            email, Password)
+         console.log('Form submitted:', email, password);
         
-
-          try {
-             const response = await createUserWithEmailAndPassword()
-             console.log(response)
-             console.log('your now signed in')
+         try {
+             const response = await createUserWithEmailAndPassword(getAuth(), email, password); // Update function call
+             console.log(response);
+             console.log('your now signed in');
              showMessage({
                 message: 'login successfully',
                 description: 'your now signed in',
                 type: 'success',
                 icon: 'success',
                 duration: 3000
-             })
-             navigation.navigate('')
+             });
+             navigation.navigate('');
           } catch (error) {
-             console.log(error)
+             console.log(error);
              showMessage({
                 message: "fail to login",
                 description: error.code.toString(),
                 type: 'danger',
                 icon: 'danger',
                 duration: 3000
-             })
+             });
           } finally {
-             setIsLoading(false)
+             setIsLoading(false);
           }
-
       }
-   
-   }
-
-
+   };
 
    function isValidEmail(email) {
       //Basic email Validation regex
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
    }
-
 
    return (
       <View style={{ backgroundColor: 'black', height: height }}>
@@ -146,8 +134,8 @@ const Register= ({ navigation }) => {
                   label="Password"
                   mode='offline'
                   secureTextEntry={!showPassword}
-                  value={Password}
-                  onChangeText={setPassword}
+                  value={password} // Update variable name
+                  onChangeText={setPassword} // Update variable name
                   error={passWordError}
                   style={{ backgroundColor: 'black', marginHorizontal: 20, }} />
                <TouchableOpacity style={{ position: 'absolute', right: 38, top: 10 }} onPress={togglePasswordVisibility}>
@@ -165,9 +153,9 @@ const Register= ({ navigation }) => {
                <Text style={{ color: 'grey', fontSize: 18, textAlign: 'center' }}>By signing up,you agree to our Terms and</Text>
                <Text style={{ color: 'grey', fontSize: 18, textAlign: 'center' }}>Privacy Policy</Text>
             </View>
-
          </View>
       </View>
-   )
+   );
 };
+
 export default Register;
