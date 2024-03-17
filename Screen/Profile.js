@@ -1,4 +1,5 @@
 import { Dimensions, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { EvilIcons, MaterialIcons, AntDesign } from 'react-native-vector-icons';
