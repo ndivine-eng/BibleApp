@@ -32,7 +32,7 @@ export default function Bible() {
     const fetchBibleVerse = async () => {
       try {
         console.log("hello")
-        const response = await axios.get('https://bolls.life/get-chapter/NKJV/22/8/')
+        const response = await axios.get('https://bolls.life/get-text/YLT/28/1/')
         setBibleVerse(response.data);
         console.log(response.data[0].name)
       } catch (error) {
@@ -58,12 +58,6 @@ export default function Bible() {
           <Text style={{fontSize:15, marginLeft:7}}>NIV</Text>
         </TouchableOpacity>
       </View>
-      {/* <Text>{bibleVerse.map((items,index)=>{
-        <View>
-          <Text>{items.name}</Text>
-           <Text>{items.chapters}</Text>
-        </View>
-      })}</Text> */}
       <View>
         <FlatList 
         data={bibleVerse}

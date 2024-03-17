@@ -1,15 +1,4 @@
 
-import React from 'react'
-import { View, Text,  } from 'react-native'
-
-export default function Todays() {
-  return (
-    <View>
-
-      <View style={{justifyContent:'center',}}>
-        <Text style={{fontSize:25, fontStyle:'italic'}}>But when you give to the needy, do not let your left hand know what your right hand is doing</Text>
-      </View>
-
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity,ScrollView  } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
@@ -18,9 +7,13 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 
 
-export default function Todayscreen() {
+export default function Todays() {
+
   const { darkMode, HandleMode } = useContext(ChangeDarkMode);
   return (
+   
+
+
 
     <View style={{backgroundColor: darkMode ? '#0d2e59' : '#fff',height:'100%',width:'100%',justifyContent:'center'}}>
       <View style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%' }}>

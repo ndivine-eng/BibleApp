@@ -10,11 +10,7 @@ import Stories from './Screen/Stories';
 import Login from './Screen/Login';
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
-import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
-import { GestureHandlerRootView} from 'react-native-gesture-handler'
-import Todayscreen from './Screen/Todayscreen';
-
 import { GestureHandlerRootView} from 'react-native-gesture-handler';
 import Highlights from './Screen/Highlight';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -37,9 +33,6 @@ export default function App() {
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
-        <Stack.Screen name="Today" component={Today}/>
-        <Stack.Screen name="TopNav" component={TopNav} options={{ headerShown: false }} />
-        <Stack.Screen name="Settings" component={Settings} />
 
         {/* <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Signin" component={Signin}/>
@@ -47,7 +40,6 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
-    // <Settings/>
    
   );
 }

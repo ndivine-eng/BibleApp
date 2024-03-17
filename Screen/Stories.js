@@ -2,8 +2,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Entypo ,MaterialIcons,AntDesign, Feather} from 'react-native-vector-icons'
 
-import React, {useEffect, useState} from "react";
-import { View, Text, Button } from "react-native";
 
 
 export default function Stories() {
