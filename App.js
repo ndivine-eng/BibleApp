@@ -34,12 +34,11 @@ export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Register' >
+      <Stack.Navigator initialRouteName='bottomVav' >
     
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Login}/>
-
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
         <Stack.Screen name="Register" component={Register}/>
