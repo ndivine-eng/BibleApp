@@ -14,7 +14,7 @@ import Todayscreen from "./Screen/Todayscreen";
 import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
-import Todayscreen from './Screen/Todayscreen';
+
 
 
 const Stack = createNativeStackNavigator();
