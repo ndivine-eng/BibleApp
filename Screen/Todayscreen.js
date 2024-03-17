@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
-import StoryCards from '../Components/StoryCards';
+import StoryCards from '../components/StoryCards'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 
