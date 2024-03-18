@@ -6,12 +6,22 @@ import Profile from './Screen/Profile';
 import About from './Screen/About';
 import 'react-native-gesture-handler';
 import Settings from './Screen/Settings';
-import Stories from './Screen/Stories';
-import Login from './Screen/Login';
+import React from "react";
+import { View, Text } from "react-native";
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler';
+import { GestureHandlerRootView} from 'react-native-gesture-handler'
+import Login from './Screen/Login';
+import Signin from './signin';
+import Register from './register';
+import Help from './help';
+import ForgotPasswordScreen from './forgotpassword';
+import Search from './search';
+import Bible from './Screen/Bible';
+
+
 
 
 
@@ -25,9 +35,9 @@ export default function App() {
     <ThemeProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName='bottomVav' >
+    
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
-        <Stack.Screen name="Profile" component={Profile}/>
-        <Stack.Screen name="Settings" component={Settings}/>
+        <Stack.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
@@ -35,6 +45,13 @@ export default function App() {
         {/* <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Signin" component={Signin}/>
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown:false}}/> */}
+        <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name='Signin' component={Signin}/>
+        <Stack.Screen name='Help' component={Help}/>
+        <Stack.Screen name='Search' component={Search}/>
+        <Stack.Screen name='Bible' component={Bible}/>
+        <Stack.Screen name='botom' component={BottombarNav}/>
+        <Stack.Screen name='forgot' component={ForgotPasswordScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>

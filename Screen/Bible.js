@@ -21,9 +21,11 @@ export default function Bible() {
   return (
     <ScrollView>
       <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 30 }}>
+
         <TouchableOpacity>
-          <AntDesign name="sound" size={20} color={'black'} style={{ marginTop: 4 }} />
+        <AntDesign name="sound" size={20} color={'black'}/>
         </TouchableOpacity>
+
         <TouchableOpacity>
           <AntDesign name="search1" size={20} color={'black'} style={{ marginTop: 4 }} />
         </TouchableOpacity>
@@ -49,6 +51,7 @@ export default function Bible() {
       </View>
     </ScrollView>
   );
+        
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})
