@@ -11,7 +11,6 @@ import { View, Text } from "react-native";
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import { createStackNavigator } from "@react-navigation/stack";
-import { GestureHandlerRootView} from 'react-native-gesture-handler';
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
 import Login from './Screen/Login';
 import Signin from './signin';
