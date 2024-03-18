@@ -4,8 +4,7 @@ import { ChangeDarkMode } from '../Context/Themeprovider';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Login() {
-    const navigation = useNavigation();
+export default function Login({navigation}) {
     const { darkMode, HandleMode } = useContext(ChangeDarkMode);
 
     return (
@@ -34,18 +33,12 @@ export default function Login() {
                 <Image source={require('../assets/google.jpeg')} style={styles.googleIcon} />
                 <Text style={{ color: darkMode ? '#fff' : '#000' }}>Continue with Google</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity style={styles.googleButton} >
-                <Text style={{ color: darkMode ? '#fff' : '#000' }}>Continue with an email</Text>
+            <TouchableOpacity style={styles.googleButton}  >
+                <Text style={{ color: darkMode ? '#fff' : '#000' }} onPress={() => navigation.navigate("Register")}>Continue with an email</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.signInButton}>
-                <View style={{ color: darkMode ? '#fff' : '#000'}}>
-                    <Text>Have an account?</Text>
-                    <TouchableOpacity >
-                        <Text style={{textAlign:'center'}}>Sign In</Text>
-                    </TouchableOpacity>
-                </View>
+                <Text style={{ color: darkMode ? '#fff' : '#000' }} onPress={() =>navigation.navigate("Signin")}>Have an account? Sign In</Text>
             </TouchableOpacity>
 
             <View style={styles.privacyContainer}>
