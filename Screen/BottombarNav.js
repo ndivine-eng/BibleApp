@@ -10,7 +10,6 @@ import DrawerNavigator from '../navigation/drawer';
 
 const Tab = createBottomTabNavigator();
 
-
 export default function BottombarNav() {
   return (
     
