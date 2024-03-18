@@ -8,13 +8,7 @@ import Todayscreen from './Todayscreen';
 import { Ionicons,MaterialIcons,AntDesign} from 'react-native-vector-icons'
 import DrawerNavigator from '../navigation/drawer';
 
-
-
-
-
 const Tab = createBottomTabNavigator();
-
-
 
 
 export default function BottombarNav() {
