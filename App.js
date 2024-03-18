@@ -12,8 +12,9 @@ import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler';
-import { GestureHandlerRootView} from 'react-native-gesture-handler'
+// import { GestureHandlerRootView} from 'react-native-gesture-handler'
 import Login from './Screen/Login';
+import Stories from './Screen/Stories';
 import Signin from './signin';
 import Register from './register';
 import Help from './help';
@@ -34,17 +35,13 @@ export default function App() {
   return (
     <ThemeProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='bottomVav  ' >
+      <Stack.Navigator initialRouteName='bottomVav' >
     
         <Stack.Screen name='bottomVav' component={BottombarNav} options={{headerShown:false}}/>
         <Stack.Screen name="Profile" component={Profile} options={{headerShown:false}}/>
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
-
-        {/* <Stack.Screen name="Register" component={Register}/>
-        <Stack.Screen name="Signin" component={Signin}/>
-        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown:false}}/> */}
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name='Signin' component={Signin}/>
         <Stack.Screen name='Help' component={Help}/>
