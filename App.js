@@ -29,7 +29,6 @@ export default function App() {
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Settings" component={Settings}/>
         <Stack.Screen name="Login" component={Login}/>
-
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
 
