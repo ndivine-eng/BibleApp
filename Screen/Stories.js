@@ -19,6 +19,7 @@ export default function Stories() {
       <Text style={{fontSize:20,fontWeight:'bold'}}>New Testament</Text>
       <AntDesign name="arrowright" size={20} color={'black'} style={{marginTop:4}}/>
       </View>
+
     </View>
   )
 }

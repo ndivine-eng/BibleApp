@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { View, Text,StyleSheet , Image, TouchableOpacity} from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Login({navigation}) {
     const { darkMode, HandleMode } = useContext(ChangeDarkMode);
@@ -11,8 +13,8 @@ export default function Login({navigation}) {
                 <Image source={require('../assets/new.jpeg')} style={styles.image} />
             </View>
 
-            <TouchableOpacity 
-                style={[styles.modeButton, { backgroundColor: darkMode ? '#333' : 'gray' }]} 
+            <TouchableOpacity
+                style={[styles.modeButton, { backgroundColor: darkMode ? '#333' : 'gray' }]}
                 onPress={HandleMode}
             >
                 <Text style={styles.modeButtonText}>Change mode</Text>
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
     },
     image: {
         alignSelf: 'center',
-        width:150,
-        height:150,
+        width: 150,
+        height: 150,
 
     },
     modeButton: {
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 38,
         fontStyle: 'italic',
-        fontWeight: "100",
+        fontWeight: "700",
     },
     accountButton: {
         marginTop: 20,
@@ -91,9 +93,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 10,
-        borderRadius: 10,
+        borderRadius: 30,
         borderWidth: 2,
-        padding: 5,
+        padding: 15,
+        width:'80%'
     },
     googleIcon: {
         width: 15,

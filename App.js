@@ -10,8 +10,8 @@ import React from "react";
 import { View, Text } from "react-native";
 import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
-import Stories from "./Screen/Stories";
 import { createStackNavigator } from "@react-navigation/stack";
+import { GestureHandlerRootView} from 'react-native-gesture-handler';
 import { GestureHandlerRootView} from 'react-native-gesture-handler'
 import Login from './Screen/Login';
 import Signin from './signin';
@@ -41,6 +41,10 @@ export default function App() {
         <Stack.Screen name="Login" component={Login}/>
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
+
+        {/* <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="Signin" component={Signin}/>
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{headerShown:false}}/> */}
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name='Signin' component={Signin}/>
         <Stack.Screen name='Help' component={Help}/>

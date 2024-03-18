@@ -1,3 +1,5 @@
+
+import React, { useContext } from 'react';
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { ChangeDarkMode } from '../Context/Themeprovider';
@@ -5,6 +7,7 @@ import axios from 'axios';
 import StoryCards from '../components/StoryCards';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
+
 
 export default function Todayscreen() {
   const [verse, setVerse] = useState(null);
