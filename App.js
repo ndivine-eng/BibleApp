@@ -12,8 +12,6 @@ import ThemeProvider from "./Context/Themeprovider";
 import Todayscreen from "./Screen/Todayscreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { GestureHandlerRootView} from 'react-native-gesture-handler';
-import Highlights from './Screen/Highlight';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
 
@@ -31,6 +29,7 @@ export default function App() {
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Settings" component={Settings}/>
         <Stack.Screen name="Login" component={Login}/>
+
         <Stack.Screen name="Todayscreen" component={Todayscreen}/>
         <Stack.Screen name="Stories" component={Stories}/>
 
@@ -40,6 +39,7 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
+    // <Settings/>
    
   );
 }
